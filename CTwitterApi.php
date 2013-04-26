@@ -1,5 +1,5 @@
 <?php
-	include dirname(__FILE__).'/twitteroauth_lib/twitteroauth.php';
+	include dirname(__FILE__).'/twitteroauth.php';
 
 	class CTwitterApi extends CApplicationComponent {
 		public $consumer_key;
@@ -7,7 +7,16 @@
 		public $oauth_token;
 		public $oauth_token_secret;
 
-		function call($function, $method="get", $params=array()) {
-			return array();
+		function call($function, $method="get", $params=array(), $format=null) {
+			$_twitter = new TwitterOAuth(
+								$this->consumer_key,
+								$this->consumer_secret,
+								$this->oauth_token,
+								$this->oauth_token_secret
+							);
+
+			$_twitter->host = "https://api.twitter.com/1.1/";
+
+			return $connection->{$method}($function, $params);
 		}
 	}
