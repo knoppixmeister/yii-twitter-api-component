@@ -17,6 +17,6 @@
 
 			$_twitter->host = "https://api.twitter.com/1.1/";
 
-			return $connection->{$method}($function, $params);
+			return $_twitter->{$method}($function, $params);
 		}
 	}
