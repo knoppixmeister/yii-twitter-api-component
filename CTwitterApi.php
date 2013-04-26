@@ -7,7 +7,7 @@
 		public $oauth_token;
 		public $oauth_token_secret;
 
-		function call($function, $method="get", $params=array(), $format=null) {
+		function call($function, $params=array(), $method="get", $format=null) {
 			$_twitter = new TwitterOAuth(
 								$this->consumer_key,
 								$this->consumer_secret,
@@ -17,6 +17,6 @@
 
 			$_twitter->host = "https://api.twitter.com/1.1/";
 
-			return $_twitter->{$method}($function, $params);
+			return	$_twitter->{$method}($function, $params);
 		}
 	}
