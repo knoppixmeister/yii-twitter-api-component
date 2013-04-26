@@ -1,5 +1,5 @@
 <?php
-	include dirname(__FILE__).'/twitteroauth.php';
+	include dirname(__FILE__).'/twitteroauth_lib/twitteroauth.php';
 
 	class CTwitterApi extends CApplicationComponent {
 		public $consumer_key;
